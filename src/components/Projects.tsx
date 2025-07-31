@@ -56,9 +56,9 @@ const Projects = () => {
           </div>
           
           <div className="text-center mt-12 animate-fade-in-up animate-delay-500">
-            <div className="text-muted-foreground mb-6 max-w-md mx-auto">
-              <p className="flex items-center justify-center gap-2 flex-wrap">
-                Want to see more? Check out my{" "}
+            <div className="text-muted-foreground mb-6 max-w-2xl mx-auto px-4">
+              <p className="inline-flex items-center justify-center gap-2 flex-wrap">
+                <span>Want to see more? Check out my</span>
                 <a 
                   href="https://github.com/hmcelik" 
                   target="_blank" 
@@ -68,7 +68,7 @@ const Projects = () => {
                 >
                   <Github className="w-5 h-5" />
                 </a>
-                {" "}for additional projects and contributions.
+                <span>for additional projects and contributions.</span>
               </p>
             </div>
           </div>
