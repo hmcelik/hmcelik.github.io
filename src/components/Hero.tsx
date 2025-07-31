@@ -7,11 +7,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Github, Linkedin, Download, ArrowDown, FileText, ChevronDown, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { Github, Linkedin, Download, ArrowDown, FileText, ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
   const scrollToProjects = () => {
     const element = document.getElementById("projects");
@@ -21,61 +19,57 @@ const Hero = () => {
   };
 
   const handleDownloadCV = async () => {
-    setIsGeneratingPDF(true);
-    
     try {
-      console.log('Requesting CV PDF generation...');
-      const response = await fetch('/api/cv');
-      
-      if (response.ok) {
-        const contentType = response.headers.get('content-type');
-        console.log('Response content type:', contentType);
+      // Method 1: Try to fetch and download the file
+      try {
+        const response = await fetch('/cv.tex');
         
-        if (contentType?.includes('application/pdf')) {
-          // Successfully generated PDF
-          const blob = await response.blob();
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = 'Huseyin_Melih_Celik_CV.pdf';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-          console.log('PDF downloaded successfully');
-        } else if (contentType?.includes('text/plain')) {
-          // Got LaTeX file with instructions
-          const text = await response.text();
-          const blob = new Blob([text], { type: 'text/plain' });
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = 'CV_Huseyin_Melih_Celik.tex';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-          
-          // Show user a helpful message
-          alert('🎯 LaTeX source downloaded!\n\nFor best results:\n1. Go to overleaf.com (free)\n2. Create new project\n3. Upload the downloaded .tex file\n4. Click "Recompile" to generate PDF\n\nOr use the "View CV (PDF)" option for the ready-made PDF!');
-        } else {
-          console.warn('Unexpected content type:', contentType);
-          throw new Error('Unexpected response format');
+        if (!response.ok) {
+          throw new Error('Failed to fetch CV file');
         }
-      } else {
-        console.error('API request failed:', response.status);
-        throw new Error(`Server error: ${response.status}`);
+        
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'CV_Huseyin_Melih_Celik.tex';
+        link.style.display = 'none';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Clean up the object URL
+        window.URL.revokeObjectURL(url);
+        
+        // Show success message
+        setTimeout(() => {
+          alert('🎯 LaTeX source downloaded!\n\nFor best results:\n1. Go to overleaf.com (free)\n2. Create new project\n3. Upload the downloaded .tex file\n4. Click "Recompile" to generate PDF\n\nOr use the "View CV (PDF)" option for the ready-made PDF!');
+        }, 100);
+        
+      } catch (fetchError) {
+        console.log('Fetch method failed, trying direct link method:', fetchError);
+        
+        // Method 2: Fallback to direct link download
+        const link = document.createElement('a');
+        link.href = '/cv.tex';
+        link.download = 'CV_Huseyin_Melih_Celik.tex';
+        link.target = '_blank';
+        link.style.display = 'none';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Show fallback success message
+        setTimeout(() => {
+          alert('🎯 LaTeX source download initiated!\n\nIf the download didn\'t start automatically, right-click this link and select "Save As": /cv.tex\n\nFor best results:\n1. Go to overleaf.com (free)\n2. Create new project\n3. Upload the downloaded .tex file\n4. Click "Recompile" to generate PDF');
+        }, 100);
       }
+      
     } catch (error) {
       console.error('Download failed:', error);
-      
-      // Show user-friendly error message
-      alert('CV download failed. Please try the "View CV (PDF)" option instead.');
-      
-      // Fallback: try to open the PDF version
-      window.open('/Huseyin-Melih-Celik-CV.pdf', '_blank');
-    } finally {
-      setIsGeneratingPDF(false);
+      alert('CV download failed. Please try the "View CV (PDF)" option instead, or visit the repository directly to access the LaTeX source.');
     }
   };
 
@@ -118,13 +112,9 @@ const Hero = () => {
                   <FileText className="mr-2 h-4 w-4" />
                   View CV (PDF)
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={handleDownloadCV} className="cursor-pointer" disabled={isGeneratingPDF}>
-                  {isGeneratingPDF ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <Download className="mr-2 h-4 w-4" />
-                  )}
-                  {isGeneratingPDF ? 'Generating...' : 'Download LaTeX'}
+                <DropdownMenuItem onClick={handleDownloadCV} className="cursor-pointer">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download LaTeX
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
