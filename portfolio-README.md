@@ -1,6 +1,6 @@
 # Huseyin Melih Celik - Portfolio Website
 
-A modern, professional portfolio website built with Next.js, TypeScript, and Tailwind CSS, showcasing expertise in robotics, software engineering, and full-stack development.
+A modern, professional portfolio website built with Next.js, TypeScript, and Tailwind CSS, showcasing expertise in automation, software engineering, and full-stack development.
 
 ## 🚀 Features
 
@@ -26,7 +26,7 @@ A modern, professional portfolio website built with Next.js, TypeScript, and Tai
 2. **About** - Professional background and passion for technology
 3. **Experience** - Professional experience including AR/VR internship
 4. **Projects** - Featured projects including:
-   - Autonomous Rescue Robot Simulation (ROS + Unity)
+   - Autonomous Navigation System (Unity + C#)
    - Supermarket Tycoon (Java Game)
    - Telegram Moderation Platform (Full-stack)
 5. **Skills** - Technical skills organized by category

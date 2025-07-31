@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Huseyin Melih Celik | Software & Robotics Engineer",
-  description: "Computer Science student at TU/e specializing in robotics, autonomous systems, and full-stack development. Building intelligent systems from ROS-based rescue robots to modern web applications.",
+  title: "Huseyin Melih Celik | Computer Science and Engineering Student",
+  description: "Computer Science student at TU/e specializing in autonomous systems, and full-stack development. Building intelligent systems from automation frameworks to modern web applications.",
 };
 
 export default function RootLayout({

@@ -13,7 +13,7 @@ const Contact = () => {
           
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
             I am actively seeking challenging internship and graduate opportunities 
-            in robotics and software engineering. If my work resonates with you, 
+            in automation and software engineering. If my work resonates with you, 
             I would be thrilled to connect.
           </p>
           

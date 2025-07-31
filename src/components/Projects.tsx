@@ -3,17 +3,23 @@ import ProjectCard from "./ProjectCard";
 const Projects = () => {
   const projects = [
     {
-      title: "Full-Stack Telegram Moderation Platform",
-      description: "Designed and built a complete, scalable moderation service for Telegram from the ground up. This project features a robust REST API backend, architected with Node.js and Express.js, to handle all moderation logic. An in-development web dashboard provides a user-friendly interface for configuration. This project showcases my ability to architect and deploy full-stack, API-driven applications designed for real-world use.",
-      techStack: ["Node.js", "JavaScript", "REST API", "Express.js", "Full-Stack Architecture"],
+      title: "AI-Powered Telegram Moderation Bot",
+      description: "Currently developing an AI-powered moderation bot for Telegram, complete with a web dashboard for user configuration. The service is architected around a scalable Node.js backend and a robust REST API.",
+      techStack: ["Node.js", "JavaScript", "Express.js", "REST API", "AI/Machine Learning", "Vite (React)", "Database Management" ,"Full-Stack Development"],
       githubUrl: "https://github.com/hmcelik/telegram-moderator-bot",
       isStarProject: true
     },
     {
-      title: "Pixel Bounce - Mobile Arcade Game",
-      description: "Developed and published 'Pixel Bounce,' an addictive 2D arcade game, using Unity and C#. This project demonstrates end-to-end product development, from implementing gameplay mechanics and mobile-optimized controls to successfully launching on the Google Play Store.",
+      title: "Pixel Bounce - Mobile Game",
+      description: "Developed and published 'Pixel Bounce,' an addictive 2D mobile game, using Unity and C#. This project demonstrates end-to-end product development, from implementing gameplay mechanics and mobile-optimized controls to successfully launching on the Google Play Store.",
       techStack: ["Unity", "C#", "Mobile Game Development", "Google Play Store"],
       githubUrl: "https://github.com/dorukersoy47/Pixel-Bounce"
+    },
+    {
+      title: "Intelligent Pathfinding System",
+      description: "Developed an advanced pathfinding and navigation system using Unity and C#. This project implements multiple algorithms for optimal route finding and autonomous navigation. Features real-time obstacle detection, dynamic path recalculation, and smooth movement automation for intelligent agents.",
+      techStack: ["Unity", "C#", "A*", "Autonomous Navigation", "Automation Systems"],
+      githubUrl: "https://github.com/hmcelik"
     },
     {
       title: "Supermarket Tycoon",
@@ -31,16 +37,17 @@ const Projects = () => {
             Featured Projects
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                techStack={project.techStack}
-                githubUrl={project.githubUrl}
-                isStarProject={project.isStarProject}
-              />
+              <div key={index} className="w-full md:w-80 lg:w-80">
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  techStack={project.techStack}
+                  githubUrl={project.githubUrl}
+                  isStarProject={project.isStarProject}
+                />
+              </div>
             ))}
           </div>
           

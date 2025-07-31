@@ -12,12 +12,12 @@ const Skills = () => {
     {
       title: "Frameworks & Platforms",
       icon: <Globe className="w-6 h-6" />,
-      skills: ["ROS", "Unity", "Node.js", "Next.js", "React", "Express.js"]
+      skills: ["Unity", "Node.js", "Next.js", "React", "Express.js", "Docker"]
     },
     {
-      title: "Robotics & AI Concepts",
+      title: "Automation & AI Concepts",
       icon: <Cog className="w-6 h-6" />,
-      skills: ["Autonomous Navigation", "Pathfinding (A*)", "SLAM/Mapping", "Computer Vision", "Machine Learning"]
+      skills: ["Autonomous Navigation", "Pathfinding (A*)", "Process Automation", "Computer Vision", "Machine Learning"]
     },
     {
       title: "Development & Tools",
