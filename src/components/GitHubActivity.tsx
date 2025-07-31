@@ -71,7 +71,7 @@ const GitHubActivity = () => {
                           }
                           theme={{
                             light: ['#f1f5f9', '#c7d2fe', '#818cf8', '#6366f1', '#4338ca'],
-                            dark: ['#1e1b4b', '#3730a3', '#4338ca', '#6366f1', '#818cf8'],
+                            dark: ['#0f0f23', '#1a1a3a', '#2d2d5f', '#4a4a7a', '#6b6b9d'],
                           }}
                         />
                         <Tooltip id="react-tooltip" />

@@ -82,21 +82,21 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in-up">
             Huseyin Melih Celik
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up animate-delay-200">
             Computer Science student at TU/e. Building powerful software solutions, from 
             immersive C# games to full-stack web applications.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animate-delay-400">
             <Button 
               size="lg" 
               onClick={scrollToProjects}
-              className="text-lg px-8 py-3"
+              className="text-lg px-8 py-3 glow-on-hover hover-scale"
             >
               View My Work
               <ArrowDown className="ml-2 h-5 w-5" />
@@ -107,7 +107,7 @@ const Hero = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="text-lg px-8 py-3"
+                  className="text-lg px-8 py-3 hover-scale"
                 >
                   My CV
                   <ChevronDown className="ml-2 h-5 w-5" />
@@ -130,8 +130,8 @@ const Hero = () => {
             </DropdownMenu>
           </div>
           
-          <div className="flex justify-center space-x-6">
-            <Button variant="ghost" size="icon" className="h-12 w-12" asChild>
+          <div className="flex justify-center space-x-6 animate-fade-in-up animate-delay-500">
+            <Button variant="ghost" size="icon" className="h-12 w-12 hover-scale" asChild>
               <a 
                 href="https://github.com/hmcelik" 
                 target="_blank" 
@@ -142,7 +142,7 @@ const Hero = () => {
               </a>
             </Button>
             
-            <Button variant="ghost" size="icon" className="h-12 w-12" asChild>
+            <Button variant="ghost" size="icon" className="h-12 w-12 hover-scale" asChild>
               <a 
                 href="https://www.linkedin.com/in/huseyinmelihcelik" 
                 target="_blank" 

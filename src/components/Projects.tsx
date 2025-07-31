@@ -1,4 +1,6 @@
 import ProjectCard from "./ProjectCard";
+import { Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Projects = () => {
   const projects = [
@@ -32,14 +34,17 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-foreground animate-fade-in-up">
             Featured Projects
           </h2>
           
           <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
-              <div key={index} className="w-full md:w-80 lg:w-80">
+              <div 
+                key={index} 
+                className={`w-full md:w-80 lg:w-80 animate-fade-in-up animate-delay-${(index + 1) * 100}`}
+              >
                 <ProjectCard
                   title={project.title}
                   description={project.description}
@@ -51,10 +56,22 @@ const Projects = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
-              Want to see more? Check out my GitHub for additional projects and contributions.
-            </p>
+          <div className="text-center mt-12 animate-fade-in-up animate-delay-500">
+            <div className="text-muted-foreground mb-6 max-w-md mx-auto">
+              <p className="flex items-center justify-center gap-2 flex-wrap">
+                Want to see more? Check out my{" "}
+                <a 
+                  href="https://github.com/hmcelik" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center hover-scale transition-all duration-200 hover:text-foreground glow-on-hover"
+                  aria-label="Visit my GitHub profile"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                {" "}for additional projects and contributions.
+              </p>
+            </div>
           </div>
         </div>
       </div>
