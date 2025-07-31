@@ -19,7 +19,7 @@ const Contact = () => {
           
           <Card className="max-w-2xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-2xl">Let's Connect</CardTitle>
+              <CardTitle className="text-2xl">Let&apos;s Connect</CardTitle>
               <CardDescription className="text-lg">
                 Ready to discuss exciting opportunities in tech
               </CardDescription>

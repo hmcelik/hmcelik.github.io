@@ -23,7 +23,7 @@ const About = () => {
             </p>
             
             <p className="text-xl">
-              Whether it's implementing pathfinding algorithms for autonomous navigation 
+              Whether it&apos;s implementing pathfinding algorithms for autonomous navigation 
               or designing scalable web architectures, I approach every project with 
               curiosity, precision, and a commitment to excellence.
             </p>
