@@ -24,33 +24,32 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
-      
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       
       - name: Install dependencies
         run: npm ci
       
+      - name: Debug environment
+        run: |
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Current directory: $(pwd)"
+          echo "Directory contents:"
+          ls -la
+      
       - name: Build with Next.js
-        run: npm run build
+        run: |
+          echo "Starting Next.js build..."
+          npm run build
+          echo "Build completed, checking files..."
+          ls -la
+          echo "Checking for out directory..."
+          find . -name "out" -type d
+          echo "Checking for any build output directories..."
+          find . -maxdepth 2 -type d -name "*out*" -o -name "build" -o -name "dist"
         env:
           NODE_ENV: production
-      
-      - name: List build output
-        run: ls -la
       
       - name: Check out directory
         run: |
@@ -59,6 +58,8 @@ jobs:
             ls -la ./out
           else
             echo "✗ out directory does not exist"
+            echo "Current directory contents:"
+            ls -la
             exit 1
           fi
       
