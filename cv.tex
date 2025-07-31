@@ -1,0 +1,93 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, margin=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx} 
+
+% --- Document Styling ---
+\definecolor{linkcolor}{HTML}{0056b3}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+}
+\renewcommand{\familydefault}{\sfdefault} 
+\pagestyle{empty} 
+\setlength{\parindent}{0pt} 
+
+% --- Custom Commands for CV Structure ---
+\newcommand{\cvname}[1]{\begin{center}\Huge\textbf{#1}\end{center}\vspace{-4mm}}
+\newcommand{\cvcontact}[4]{
+    \begin{center}
+        #1 $\cdot$ \href{mailto:#2}{#2} $\cdot$ \href{https://www.linkedin.com/in/#3}{linkedin.com/in/#3} $\cdot$ \href{https://github.com/#4}{github.com/#4}
+    \end{center}
+}
+\newcommand{\cvsection}[1]{\vspace{6mm}\section*{\large\textbf{#1}}\vspace{-3mm}\hrule\vspace{2mm}}
+\newcommand{\cventry}[4]{
+    \noindent\begin{tabularx}{\textwidth}{@{}l >{\raggedleft\arraybackslash}X@{}}
+        \textbf{#1} & \textit{#2} \\
+        \textit{#3} & \textit{#4} \\
+    \end{tabularx}
+}
+\newcommand{\cvproject}[1]{\vspace{3mm}\noindent\textbf{#1}}
+
+% --- CV Content ---
+\begin{document}
+
+% --- HEADER ---
+\cvname{Huseyin Melih Celik}
+\cvcontact{Eindhoven, Netherlands}{h.m.celik@student.tue.nl}{huseyinmelihcelik}{hmcelik}
+
+% --- EDUCATION ---
+\cvsection{Education}
+\cventry{Eindhoven University of Technology (TU/e)}{Sep 2024 – Expected Jun 2027}{B.Sc. in Computer Science \& Engineering}{Eindhoven, Netherlands}
+
+\vspace{8mm}
+
+\cventry{The Koç School}{Sep 2019 – Jun 2024}{International Baccalaureate (IB) Diploma}{Istanbul, Turkey}
+\begin{itemize} \itemsep -1pt
+    \item Achieved \textbf{1st rank nationwide} in Turkey's High School Entrance Exam (LGS) out of over 1 million students.
+    \item Awarded a \textbf{100\% merit-based scholarship} for a 5-year program including English preparatory year.
+    \item Completed with \textbf{Higher Level (HL) courses in Physics, Mathematics AA, and Computer Science}.
+    \item Achieved an overall score of \textbf{8.0 in the IELTS Academic} examination.
+\end{itemize}
+
+% --- EXPERIENCE ---
+\cvsection{Experience}
+\cventry{AR/VR Development Intern}{Feb 2023}{Reo-Tek}{Ankara, Turkey (METU Teknokent)}
+\begin{itemize} \itemsep -1pt
+    \item Developed a project prototype using \textbf{Unity} and \textbf{C\#} under the mentorship of senior engineers.
+    \item Gained hands-on experience with the professional development pipeline for AR/VR applications.
+    \item Contributed to code reviews and team meetings, improving collaboration and communication skills.
+\end{itemize}
+
+% --- PROJECTS ---
+\cvsection{Projects}
+\cvproject{Full-Stack Telegram Moderation Platform}
+\begin{itemize} \itemsep -1pt
+    \item Architected a scalable, API-driven moderation service using \textbf{Node.js} and \textbf{Express.js}.
+    \item Designed a REST API to handle moderation logic and currently developing a web dashboard with \textbf{Vite (React)}.
+\end{itemize}
+
+\cvproject{Pixel Bounce – Mobile Arcade Game}
+\begin{itemize} \itemsep -1pt
+    \item Led the development of a 2D mobile game from concept to deployment using \textbf{Unity} and \textbf{C\#}.
+    \item Implemented core gameplay and successfully published the application on the \textbf{Google Play Store}.
+\end{itemize}
+
+\cvproject{Supermarket Tycoon – Java Application}
+\begin{itemize} \itemsep -1pt
+    \item Engineered a complete simulation game in \textbf{pure Java} without a game engine to strengthen foundational OOP skills.
+    \item Implemented complex game logic and a graphical user interface using \textbf{Java Swing/JavaFX}.
+\end{itemize}
+
+% --- SKILLS ---
+\cvsection{Skills}
+\vspace{1mm}
+\noindent\textbf{Languages:} Java, C\#, JavaScript, TypeScript, C++, Python\\[2mm]
+\noindent\textbf{Frameworks \& Platforms:} Node.js, Unity, Next.js, React, Express.js, Vite\\[2mm]
+\noindent\textbf{Tools \& Technologies:} Git, GitHub, Docker, Linux, REST APIs, Google Play Store\\[2mm]
+\noindent\textbf{Concepts:} Object-Oriented Programming (OOP), Full-Stack Development, Mobile Game Development, AR/VR
+
+\end{document}
