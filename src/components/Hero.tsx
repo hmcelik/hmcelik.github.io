@@ -88,8 +88,8 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-            Computer Science student at TU/e. Building intelligent systems, from 
-            autonomous rescue robots with ROS to full-stack web applications.
+            Computer Science student at TU/e. Building powerful software solutions, from 
+            immersive C# games to full-stack web applications.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

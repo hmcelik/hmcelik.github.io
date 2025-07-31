@@ -10,8 +10,8 @@ const About = () => {
           <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
             <p className="text-xl mb-6">
               I am a second-year Computer Science student at TU/e with a deep passion for 
-              robotics and software engineering. My journey has taken me from building 
-              autonomous robot behaviors with ROS and Unity to developing full-stack web 
+              automation and software engineering. My journey has taken me from building 
+              immersive games with Unity and C# to developing full-stack web 
               platforms and crafting complex applications from scratch in Java.
             </p>
             
